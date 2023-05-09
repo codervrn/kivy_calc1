@@ -1,0 +1,65 @@
+<FirstScreenView>
+    MDBoxLayout:
+        id: box1
+        orientation: 'vertical'
+        padding: "10dp"
+
+        MDLabel:
+            text: 'sum'
+            halign: 'center'
+            size_hint: 1, 1
+        MDBoxLayout:
+            id: box2
+            size_hint: 1, 1
+            padding: "20dp"
+            #adaptive_height: True
+            MDTextFieldRect:
+                id: slg1
+                multiline: False
+                height: "30dp"
+                size_hint: 1, None
+                #background_color: app.theme_cls.bg_normal
+                pos_hint: {"center_y": .5}
+                #adaptive_height: True
+            MDLabel:
+                text: '+'
+                halign: 'center'
+                size_hint: 0.3, 1
+                #adaptive_height: True
+            MDTextFieldRect:
+                id: slg2
+                multiline: False
+                height: "30dp"
+                size_hint: 1, None
+                #background_color: app.theme_cls.bg_normal
+                pos_hint: {"center_y": .5}
+                #adaptive_height: True
+            MDLabel:
+                text: '='
+                halign: 'center'
+                size_hint: 0.3, 1
+                #adaptive_height: True
+            MDTextFieldRect:
+                id: slg3
+                multiline: False
+                height: "30dp"
+                size_hint: 1, None
+                #background_color: app.theme_cls.bg_normal
+                pos_hint: {"center_y": .5}
+                #adaptive_height: True
+
+        MDIconButton:
+            icon: "tank"
+            user_font_size: "64sp"
+            height: "100dp"
+            pos_hint: {"center_y": .5}
+            size_hint: 1, 1
+            text: 'ok'
+            on_press: root.calculation()
+
+        MDScrollView:
+            size_hint: 0.4, 1
+
+            MDList:
+                on_touch_down: root.onTouch()
+                id: scroll
